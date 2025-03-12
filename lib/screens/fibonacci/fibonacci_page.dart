@@ -13,14 +13,13 @@ class FibonacciPage extends StatefulWidget {
 }
 
 class _FibonacciPageState extends State<FibonacciPage> {
-  static const int SIZE = 50;
+  int SIZE = 50;
   List<int> fibonacciList = [];
   Map<int, FibonacciModel> fibonacciIconsList = {};
   Map<FibonacciIcon, List<FibonacciModel>> selectedFibonacciNumber = {};
   FibonacciModel? lastPopItem;
   final Map<int, GlobalKey> _keys = {};
   final ScrollController _scrollController = ScrollController();
-  final Map<int, BuildContext?> itemContexts = {}; // เก็บ context ของแต่ละไอเทม
 
   void generateFibonacci(int n) {
     if (n <= 0) return;
