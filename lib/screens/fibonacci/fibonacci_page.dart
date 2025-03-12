@@ -83,9 +83,11 @@ class _FibonacciPageState extends State<FibonacciPage> {
           (fibo) => fibo.isSelected == false,
         )
         .toList();
+    // ต้องใช้ List ของ item ที่ยังไม่โดนเลือกเพราะ ต้องใช้ index ของ item ที่แสดงอยู่ในการ scroll
     final scrollToIndex = unselectedList.indexWhere(
       (element) => index == element.index,
     );
+    // หาขนาดความสูงของไอเท็ม โดยจะเอาตำแหน่ง offset ของสองไอเทมที่ติดกันมาลบ เพื่อนำความสูงที่ได้ไปคำนวรหา offset ที่ต้อง scroll ไป
     BuildContext? context;
     BuildContext? context2;
     for (var key in _keys.keys) {
